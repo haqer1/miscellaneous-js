@@ -6,20 +6,20 @@ if (!miscellaneous.css) miscellaneous.css = {};
  * classes for use in CSS in situations where clients fail to support width-related media queries 
  * properly. 
  * Width is determined using body innerWidth minus left & right padding.
- * Sample usage:<pre> 
+ * Sample usage: <pre> 
  * <body onload="bmqw=new miscellaneous.css.BuggyMediaQueryWorkarounder(null,['#img1','#div2',
  *                                            '#table3'],[570,590,688,871], [true]);
  *                                            bmqw.addSpecialMediaQueryClassesIfNeeded();"></body>
  * </pre>.
  *
- * @param	noMediaClients	array of regex patterns to apply against user-agent string (e.g., 
+ * @param	noMediaClients  array of regex patterns to apply against user-agent string (e.g., 
  *                        [/calibre/] (used for null or undefined (by default))).
- * @param	selectors				selectors of elements to apply width classes to.
- * @param	minWidths				optional array of applicable min-widths to detect (classes assigned will 
+ * @param	selectors       selectors of elements to apply width classes to.
+ * @param	minWidths       optional array of applicable min-widths to detect (classes assigned will 
  *                        be generated from them).
- * @param	heightsAuto			optional array of booleans to specify whether to set element height to 
+ * @param	heightsAuto     optional array of booleans to specify whether to set element height to 
  *                        auto if no min-widths classes have been added for it.
- * @param	maxWidths				optional array of applicable max-widths to detect.
+ * @param	maxWidths       optional array of applicable max-widths to detect.
  */
 miscellaneous.css.BuggyMediaQueryWorkarounder = function(noMediaClients, selectors, minWidths, 
 																													heightsAuto, maxWidths) {
