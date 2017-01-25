@@ -2,17 +2,27 @@ var miscellaneous = miscellaneous || {};
 if (!miscellaneous.css) miscellaneous.css = {};
 
 /**
- * Adds "nomedia" (for use with :not() selector), & optionally min-w\d+px and/or max-w\d+px width classes for use in CSS in situations where clients fail to support width-related media queries properly. 
+ * Adds "nomedia" (for use with :not() selector), & optionally min-w\d+px and/or max-w\d+px width 
+ * classes for use in CSS in situations where clients fail to support width-related media queries 
+ * properly. 
  * Width is determined using body innerWidth minus left & right padding.
- * Sample usage: <body onload="bmqw=new miscellaneous.css.BuggyMediaQueryWorkarounder(null,['#img1','#div2','#table3'],[570,590,688,871], [true]);bmqw.addSpecialMediaQueryClassesIfNeeded();"></body>.
+ * Sample usage:<pre> 
+ * <body onload="bmqw=new miscellaneous.css.BuggyMediaQueryWorkarounder(null,['#img1','#div2',
+ *											'#table3'],[570,590,688,871], [true]);
+ *											bmqw.addSpecialMediaQueryClassesIfNeeded();"></body>
+ * </pre>.
  *
- * @param	noMediaClients	array of regex patterns to apply against user-agent string (e.g., [/calibre/] (used for null or undefined (by default))).
+ * @param	noMediaClients	array of regex patterns to apply against user-agent string (e.g., 
+ *													[/calibre/] (used for null or undefined (by default))).
  * @param	selectors				selectors of elements to apply width classes to.
- * @param	minWidths				optional array of applicable min-widths to detect (classes assigned will be generated from them).
- * @param	heightsAuto			optional array of booleans to specify whether to set element height to auto if no min-widths classes have been added for it.
+ * @param	minWidths				optional array of applicable min-widths to detect (classes assigned will 
+ *													be generated from them).
+ * @param	heightsAuto			optional array of booleans to specify whether to set element height to 
+ *													auto if no min-widths classes have been added for it.
  * @param	maxWidths				optional array of applicable max-widths to detect.
  */
-miscellaneous.css.BuggyMediaQueryWorkarounder = function(noMediaClients, selectors, minWidths, heightsAuto, maxWidths) {
+miscellaneous.css.BuggyMediaQueryWorkarounder = function(noMediaClients, selectors, minWidths, 
+																													heightsAuto, maxWidths) {
 	var body = document.getElementsByTagName("body")[0];
 	const PADDING_LEFT = body.style.paddingLeft >= 10 ? body.style.paddingLeft : 40;
 	const PADDING_RIGHT = body.style.paddingRight >= 10 ? body.style.paddingRight : 40;
