@@ -22,7 +22,7 @@ if (!miscellaneous.css) miscellaneous.css = {};
  * @param	maxWidths       optional array of applicable max-widths to detect.
  */
 miscellaneous.css.BuggyMediaQueryWorkarounder = function(noMediaClients, selectors, minWidths, 
-																													heightsAuto, maxWidths) {
+                                                          heightsAuto, maxWidths) {
 	var body = document.getElementsByTagName("body")[0];
 	const PADDING_LEFT = body.style.paddingLeft >= 10 ? body.style.paddingLeft : 40;
 	const PADDING_RIGHT = body.style.paddingRight >= 10 ? body.style.paddingRight : 40;
